@@ -1,5 +1,5 @@
 FROM alpine:3.9
-
+MAINTAINER d.ermizin <kernel218@gmail.com>
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
 
