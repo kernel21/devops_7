@@ -16,7 +16,6 @@ RUN wget -q "$TOMCAT_TGZ_URL" -O tomcat.tar.gz \
     && rm bin/*.bat \
     && rm tomcat.tar.gz* \
     && rm -fr $CATALINA_HOME/webapps/*
-
-#EXPOSE 8080
 COPY --from=lab7_maven:latest /maven_build/target/hello-*.war $CATALINA_HOME/webapps/hello.war
+
 CMD ["catalina.sh", "run"]
