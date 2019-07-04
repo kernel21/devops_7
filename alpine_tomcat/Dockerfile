@@ -1,9 +1,10 @@
-FROM alpine:3.9
+FROM alpine:latest
 MAINTAINER d.ermizin <kernel218@gmail.com>
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
 
-RUN apk add -q openjdk8 \
+RUN apk update -q \
+    && apk add -q openjdk8 \
     && rm -rf /var/cache/apk/*
 RUN mkdir -p "$CATALINA_HOME"
 WORKDIR $CATALINA_HOME
