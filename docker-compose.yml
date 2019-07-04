@@ -3,6 +3,8 @@ services:
   maven:
     build:
       context: alpine_maven
+    volumes:
+      - build:/maven_build/
     networks:
       - net
     restart: always
@@ -22,3 +24,6 @@ services:
 networks:
    net:
      driver: bridge
+
+volumes:
+  build: {}
