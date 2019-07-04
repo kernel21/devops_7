@@ -6,4 +6,4 @@
 
 **Размеры образов**
 
-![Doker_images_size](images/docker_images.png)
+![Docker_images_size](images/docker_images.png)
