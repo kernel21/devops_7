@@ -7,7 +7,7 @@ services:
       - build:/maven_build/
     networks:
       - net
-    restart: always
+    restart: on-failure
   tomcat:
     build:
       context: alpine_tomcat
