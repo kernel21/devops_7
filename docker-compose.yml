@@ -1,6 +1,6 @@
 version: '2'
 services:
-  maven:
+  buildfarm:
     build:
       context: alpine_maven
     volumes:
@@ -8,11 +8,11 @@ services:
     networks:
       - net
     restart: on-failure
-  tomcat:
+  servlets:
     build:
       context: alpine_tomcat
     depends_on:
-      - maven
+      - buildfarm
     expose:
       - "8080"
     ports:
@@ -20,10 +20,8 @@ services:
     networks:
       - net
     restart: always
-
 networks:
    net:
      driver: bridge
-
 volumes:
   build: {}
