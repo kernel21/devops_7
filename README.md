@@ -13,4 +13,4 @@
 
 - multi-stage builds
 
-![Docker_ms_images_size](images/docker_images_ms.png)
+![Docker_ms_images_size](images/docker_images_ms_new.png)
