@@ -13,7 +13,7 @@ ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
 
 RUN apk update -q \
-    && apk add -q openjdk8 \
+    && apk add -q openjdk8-jre \
     && rm -rf /var/cache/apk/*
 RUN mkdir -p "$CATALINA_HOME"
 WORKDIR $CATALINA_HOME
