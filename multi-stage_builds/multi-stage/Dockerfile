@@ -26,7 +26,9 @@ RUN wget -q "$TOMCAT_TGZ_URL" -O tomcat.tar.gz \
     && tar -xf tomcat.tar.gz --strip-components=1 \
     && rm bin/*.bat \
     && rm tomcat.tar.gz* \
-    && rm -fr $CATALINA_HOME/webapps/*
+    && rm -fr $CATALINA_HOME/webapps/* \
+    && rm -fr $CATALINA_HOME/bin/*.tar.gz \
+    && find $CATALINA_HOME -type f -maxdepth 1 -delete
 COPY --from=build /maven_build/target/hello-*.war $CATALINA_HOME/webapps/ROOT.war
 
 CMD ["catalina.sh", "run"]
